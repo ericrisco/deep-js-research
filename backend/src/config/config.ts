@@ -15,8 +15,8 @@ export const config = {
   api: {
     prefix: '/api/v1',
   },
-  swagger: {
-    path: '/docs',
+  ws: {
+    path: '/api/v1/ws/research'
   },
   rateLimiter: {
     windowMs: 15 * 60 * 1000,
