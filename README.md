@@ -161,6 +161,17 @@ Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
+## 🎪 JSConf España 2025
+
+Este proyecto formó parte del workshop "Creación de agentes de IA con Langchain.js" presentado en la JSConf España 2025, organizada por [midudev](https://github.com/midudev) y powered by [KeepCoding](https://keepcoding.io/).
+
+El workshop se llevó a cabo el 1 de marzo de 2025 en La Nave, Madrid, donde los asistentes aprendieron a:
+- Implementar las bibliotecas de código abierto de Langchain.js para Node.js
+- Integrar modelos de IA generativa
+- Ejecutar agentes de IA de manera independiente
+
+Para más información sobre la conferencia, visita [JSConf España 2025](https://www.jsconf.es/).
+
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia ISC. Ver el archivo `LICENSE` para más detalles.
