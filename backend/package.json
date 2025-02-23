@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node dist/server.js",
-    "dev": "ts-node src/server.ts",
+    "start": "node dist/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
     "watch": "tsc -w",
-    "test:ws": "ts-node src/tests/websocket.test.ts"
+    "test:ws": "ts-node src/tests/websocket.test.ts",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",
@@ -15,24 +16,36 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.11.24",
+    "@langchain/community": "^0.0.32",
+    "@langchain/core": "^0.2.21",
+    "@langchain/langgraph": "^0.0.8",
+    "@langchain/ollama": "^0.2.0",
+    "@langchain/openai": "^0.0.14",
+    "@tavily/core": "^0.3.1",
     "@types/ws": "^8.5.14",
     "compression": "^1.8.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "express-rate-limit": "^7.5.0",
-    "express-validator": "^7.2.1",
-    "helmet": "^8.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
     "winston": "^3.17.0",
     "ws": "^8.18.1"
   },
   "devDependencies": {
     "@types/compression": "^1.7.5",
     "@types/cors": "^2.8.17",
-    "@types/helmet": "^0.0.48"
+    "@types/express": "^4.17.21",
+    "@types/helmet": "^0.0.48",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
   }
 }
