@@ -1,10 +1,12 @@
 import WebSocket from 'ws';
 import { config } from '../config/config';
+import { StartResearchMessage } from '../interfaces/deepresearch.interface';
 
 const TEST_QUERIES = [
-  '¿Por qué el cielo es azul?',
-  '¿Cuál es el sentido de la vida?',
-  '¿Por qué los gatos ronronean?'
+  'How does the JavaScript event loop work?',
+  'What are JavaScript Promises and how do they work?',
+  'Explain React\'s Virtual DOM and reconciliation process',
+  'What is TypeScript and how does it enhance JavaScript?'
 ];
 
 const wsUrl = `ws://localhost:${config.port}${config.ws.path}`;
@@ -16,11 +18,17 @@ ws.on('open', () => {
   console.log('✅ Conexión establecida\n');
   const randomQuery = TEST_QUERIES[Math.floor(Math.random() * TEST_QUERIES.length)];
   
-  console.log(`📤 Enviando query: "${randomQuery}"\n`);
-  ws.send(JSON.stringify({
+  // Formato correcto del mensaje de inicio
+  const startMessage: StartResearchMessage = {
     action: 'start',
     query: randomQuery
-  }));
+  };
+  
+  console.log(`📤 Enviando mensaje de inicio:`);
+  console.log(JSON.stringify(startMessage, null, 2));
+  console.log();
+  
+  ws.send(JSON.stringify(startMessage));
 });
 
 ws.on('message', (data) => {
@@ -35,10 +43,16 @@ ws.on('message', (data) => {
   const progressBar = createProgressBar(message.progress);
   
   console.log(`[${timestamp}] ${progressBar} ${message.progress}%`);
-  console.log(`📝 ${message.details}\n`);
+  console.log(`📝 Paso: ${message.step}`);
+  console.log(`📄 Detalles: ${message.details}\n`);
 
-  if (message.step === 'stop') {
-    console.log('✅ Test completado');
+  if (message.step === 'complete') {
+    console.log('✅ Investigación completada');
+    console.log('Documento final (primeras 10 líneas):');
+    if (message.completion) {
+      console.log(message.completion.split('\n').slice(0, 10).join('\n'));
+      console.log('...\n');
+    }
     ws.close();
     process.exit(0);
   }
