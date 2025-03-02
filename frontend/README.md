@@ -1,89 +1,36 @@
-# Deep JS Research
-
-A modern web application for JavaScript code research and analysis.
-
-## Features
-
-- Real-time code analysis through WebSocket connection
-- Live progress updates during processing
-- Clean and responsive UI
-- Dark mode support
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-### Prerequisites
+First, run the development server:
 
-- Node.js 18.x or higher
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/deep-js-research.git
-cd deep-js-research
-```
-
-2. Install dependencies
-```bash
-npm install
-# or
-yarn install
-```
-
-3. Set up environment variables
-Create a `.env.local` file in the root directory with the following content:
-```
-NEXT_PUBLIC_WEBSOCKET_URL=ws://your-websocket-server:port
-```
-
-4. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## WebSocket Server
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This frontend application requires a WebSocket server to process research queries. The WebSocket server should handle the following:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- Accept connections from the frontend
-- Receive research queries
-- Process the queries and send status updates
-- Send the final result when processing is complete
+## Learn More
 
-The WebSocket server should respond with messages in the following format:
+To learn more about Next.js, take a look at the following resources:
 
-```json
-// Status update
-{
-  "type": "status",
-  "message": "Processing file: example.js"
-}
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-// Final result
-{
-  "type": "result",
-  "result": "Detailed analysis result here..."
-}
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-// Error
-{
-  "type": "error",
-  "message": "Error message here"
-}
-```
+## Deploy on Vercel
 
-## Technologies Used
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- WebSocket API
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

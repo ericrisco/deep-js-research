@@ -19,6 +19,7 @@ async function testTavilySearch() {
 
   try {
     const initialState: ResearchState = {
+      findGapLoops: 0,
       researchQuery: "original query",
       searchPlan: searchPlan
     };

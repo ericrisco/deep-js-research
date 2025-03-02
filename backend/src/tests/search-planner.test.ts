@@ -19,6 +19,7 @@ async function testSearchPlanner() {
 
   try {
     const initialState: ResearchState = {
+      findGapLoops: 0,
       researchQuery: query
     };
 

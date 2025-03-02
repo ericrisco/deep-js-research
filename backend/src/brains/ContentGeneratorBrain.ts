@@ -13,7 +13,8 @@ export class ContentGeneratorBrain {
     this.model = new ChatOllama({
       baseUrl: config.llm.ollamaBaseUrl,
       model: config.llm.generatingModel,
-      temperature: 0.3
+      temperature: 0.3,
+      numPredict: config.llm.contentGeneratorMaxTokens
     });
 
     this.prompt = PromptTemplate.fromTemplate(CONTENT_GENERATOR_PROMPT);

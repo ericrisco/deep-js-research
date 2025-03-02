@@ -2,6 +2,7 @@ import { DocumentStructureBrain } from '../brains/DocumentStructureBrain';
 import { ResearchState } from '../interfaces/state.interface';
 
 const TEST_STATE: ResearchState = {
+  findGapLoops: 0,
   researchQuery: "How does the JavaScript event loop work?",
   searchResults: [
     {

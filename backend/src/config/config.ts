@@ -21,7 +21,8 @@ export const config = {
   llm: {
     thinkingModel: process.env.THINKING_MODEL || 'deepseek-r1:8b',
     generatingModel: process.env.GENERATING_MODEL || 'qwen2.5:7b',
-    ollamaBaseUrl: process.env.OLLAMA_BASE_URL || 'http://localhost:11434'
+    ollamaBaseUrl: process.env.OLLAMA_BASE_URL || 'http://localhost:11434',
+    contentGeneratorMaxTokens: parseInt(process.env.CONTENT_GENERATOR_MAX_TOKENS || '5000', 10)
   },
   tavily: {
     apiKey: process.env.TAVILY_API_KEY || '',
