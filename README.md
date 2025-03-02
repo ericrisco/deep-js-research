@@ -2,7 +2,7 @@
 
 Una alternativa open source a DeepResearch de OpenAI (200$/mes) que permite investigar cualquier tema y generar documentos de investigación con datos factuales. El proyecto utiliza LangChain y LangGraph junto con modelos LLM de código abierto:
 - **DeepSeek R1 (8b)**: Para el análisis y planificación
-- **Qwen 2.5 (7b)**: Para la generación de contenido
+- **Gemma 2 (8b)**: Para la generación de contenido
 - **Tavily API**: Para búsquedas web eficientes y extracción de contenido
 
 Un sistema avanzado de investigación impulsado por IA que utiliza modelos de lenguaje y búsqueda web para generar documentos de investigación detallados y bien estructurados.
@@ -121,7 +121,7 @@ NODE_ENV=development
 API_PREFIX=/api/v1
 OLLAMA_BASE_URL=http://localhost:11434
 TAVILY_API_KEY=your_tavily_api_key_here
-GENERATION_MODEL=qwen2.5:7b
+GENERATION_MODEL=gemma2
 THINKING_MODEL=deepseek-r1:8b
 MAX_ANALYSIS_COUNT=2
 MAX_RESULTS=1
