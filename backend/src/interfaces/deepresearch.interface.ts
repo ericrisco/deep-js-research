@@ -1,14 +1,12 @@
 export type ResearchStep = 
-  | 'start'
-  | 'initialize_brain'
-  | 'pick_nose'
-  | 'analyze_booger'
-  | 'contemplate_existence'
-  | 'drink_coffee'
-  | 'pretend_to_work'
-  | 'look_busy'
-  | 'eureka_moment'
-  | 'stop';
+  | 'search_planner'
+  | 'search'
+  | 'summarize'
+  | 'analyze_gaps'
+  | 'generate_structure'
+  | 'generate_content'
+  | 'complete'
+  | 'error';
 
 export interface ResearchMessage {
   step: ResearchStep;
@@ -16,6 +14,7 @@ export interface ResearchMessage {
   progress: number;
   details?: string;
   query?: string;
+  completion?: string;
 }
 
 export interface StartResearchMessage {

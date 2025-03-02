@@ -8,6 +8,13 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test:ws": "ts-node src/tests/websocket.test.ts",
+    "test:brain": "ts-node src/tests/search-planner.test.ts",
+    "test:search": "ts-node src/tests/tavily-search.test.ts",
+    "test:summarize": "ts-node src/tests/content-summarizer.test.ts",
+    "test:gap": "ts-node src/tests/gap-analyzer.test.ts",
+    "test:structure": "ts-node src/tests/document-structure.test.ts",
+    "test:content": "ts-node src/tests/content-generator.test.ts",
+    "test:graph": "ts-node src/tests/research-graph.test.ts",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [],
