@@ -48,24 +48,34 @@ export class ContentGeneratorBrain {
 
     logger.info('Generating final document content...');
 
-    const formattedPrompt = await this.prompt.format({
-      topic: state.researchQuery,
-      summaries,
-      structure: state.documentStructure
-    });
+    try {
+      const formattedPrompt = await this.prompt.format({
+        topic: state.researchQuery,
+        summaries,
+        structure: state.documentStructure
+      });
 
-    const response = await this.model.invoke(formattedPrompt);
-    const finalDocument = response.content.toString();
+      const response = await this.model.invoke(formattedPrompt);
+      
+      if (!response || typeof response.content !== 'string') {
+        throw new Error('Invalid response from model');
+      }
 
-    if (!finalDocument) {
-      throw new Error('Failed to generate document content');
+      const finalDocument = response.content;
+
+      if (!finalDocument) {
+        throw new Error('Failed to generate document content');
+      }
+
+      logger.info('Document content generated successfully');
+
+      return {
+        ...state,
+        finalDocument
+      };
+    } catch (error: any) {
+      logger.error('Error generating document content:', error);
+      throw new Error(`Failed to generate document content: ${error.message}`);
     }
-
-    logger.info('Document content generated successfully');
-
-    return {
-      ...state,
-      finalDocument
-    };
   }
 } 

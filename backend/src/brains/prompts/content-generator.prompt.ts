@@ -40,7 +40,8 @@ STYLE GUIDELINES:
 - Use technical terminology consistently
 - Include relevant diagrams descriptions when needed
 
-Now, generate the complete technical document following these requirements and guidelines.`;
+Now, generate the complete technical document following these requirements and guidelines.
+Only generate the content using the structure and available information, don't include any other text.`;
 
 export type ContentGeneratorInput = {
   topic: string;

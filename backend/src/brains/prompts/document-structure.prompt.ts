@@ -63,7 +63,9 @@ Example Output:
 ## Further Reading
 </structure>
 
-Now create a similar structure for the provided topic, focusing on creating a comprehensive and well-organized technical document.`;
+Now create a similar structure for the provided topic, focusing on creating a comprehensive and well-organized technical document.
+
+Only create the structure, don't include any other text.`;
 
 export type DocumentStructureInput = {
   topic: string;
